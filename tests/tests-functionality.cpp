@@ -6,6 +6,28 @@
 #include <terminal_style/TerStyledText.hpp>
 #include "test-cases.hpp"
 
+TEST_CASE("Testing format")
+{
+  using namespace TerminalStyle;
+
+  auto testCase = GENERATE(
+    CreateTestCaseFormat(Format::Bold, 1),
+    CreateTestCaseFormat(Format::Dim, 2),
+    CreateTestCaseFormat(Format::Underlined, 4),
+    CreateTestCaseFormat(Format::Blink, 5),
+    CreateTestCaseFormat(Format::Reverse, 7),
+    CreateTestCaseFormat(Format::Hidden, 8)
+  );
+
+  const auto& givenFormat = testCase.first;
+  const auto& expectedOutput = testCase.second;
+
+  const auto actualOutput = TerStyledText().WithFormat(givenFormat).WithText(k_ContentString).ToString();
+
+  REQUIRE(expectedOutput == actualOutput);
+}
+
+
 TEST_CASE("Testing fg colors")
 {
   using namespace TerminalStyle;

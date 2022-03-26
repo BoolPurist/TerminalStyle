@@ -5,6 +5,14 @@
 #include "test-cases.hpp"
 
 std::string CreateExpectedFgColor(unsigned int expectedFgColor);
+std::string CreateExpectedBgColor(unsigned int expectedFgColor);
+std::string CreateExpectedFormat(unsigned int expectedFormat);
+
+std::string CreateExpectedFormat(unsigned int expectedFormat)
+{
+  return "\033[" + std::to_string(expectedFormat)  + ";39" +
+    ";49m" + k_ContentString + "\033[0m";
+}
 
 std::string CreateExpectedFgColor(unsigned int expectedFgColor)
 {
@@ -32,4 +40,12 @@ std::pair<TerminalStyle::Colors,std::string> CreateTestCaseFgColor(
 )
 {
   return std::make_pair(givenColor, CreateExpectedFgColor(expectedFgColor));
+}
+
+std::pair<TerminalStyle::Format, std::string> CreateTestCaseFormat(
+  TerminalStyle::Format givenFormat,
+  unsigned int expectedFormat
+)
+{
+  return std::make_pair(givenFormat, CreateExpectedFormat(expectedFormat));
 }
