@@ -8,19 +8,25 @@
 #include "Formats.hpp"
 #include "Colors.hpp"
 #include <string>
+#include <ostream>
 
 namespace TerminalStyle
 {
-  class TStyler
+  class TerStyledText
   {
+
    public:
-    TStyler& WithFgColor(Colors newFgColor);
-    TStyler& WithBgColor(Colors newBgColor);
-    TStyler& WithFormat(Format newFormat);
-    std::string StyleText(const std::string& toStyle) const;
+    TerStyledText& WithFgColor(Colors newFgColor);
+    TerStyledText& WithBgColor(Colors newBgColor);
+    TerStyledText& WithFormat(Format newFormat);
+    TerStyledText& WithText(const std::string& toStyle);
+    std::string ToString() const;
+
+    friend std::ostream& operator<<(std::ostream& os, const TerStyledText& text);
    private:
     unsigned int currentFgColor = 39;
     unsigned int currentBgColor = 49;
+    std::string text{};
     unsigned int currentFormat = static_cast<unsigned int>(Format::None);
   };
 

@@ -8,6 +8,7 @@
 #include <string>
 #include <terminal_style/Colors.hpp>
 
+const std::string k_ContentString{"Text"};
 
 std::pair<TerminalStyle::Colors, std::string> CreateTestCaseFgColor(
   TerminalStyle::Colors givenColor,

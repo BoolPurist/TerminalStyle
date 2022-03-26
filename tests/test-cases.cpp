@@ -8,7 +8,8 @@ std::string CreateExpectedFgColor(unsigned int expectedFgColor);
 
 std::string CreateExpectedFgColor(unsigned int expectedFgColor)
 {
-  return "\033[0;" + std::to_string(expectedFgColor) + ";49mText\033[0m";
+  return "\033[0;" + std::to_string(expectedFgColor) +
+  ";49m" + k_ContentString + "\033[0m";
 }
 std::pair<TerminalStyle::Colors,std::string> CreateTestCaseFgColor(
   TerminalStyle::Colors givenColor,

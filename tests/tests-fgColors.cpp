@@ -3,7 +3,7 @@
 //
 
 #include <catch2/catch.hpp>
-#include <terminal_style/TStyler.hpp>
+#include <terminal_style/TerStyledText.hpp>
 #include "test-cases.hpp"
 
 TEST_CASE("Testing")
@@ -32,8 +32,7 @@ TEST_CASE("Testing")
   const auto& givenColor = testCase.first;
   const auto& expectedOutput = testCase.second;
 
-  const auto actualOutput = TStyler().WithFgColor(givenColor).StyleText("Text");
+  const auto actualOutput = TerStyledText().WithFgColor(givenColor).WithText(k_ContentString).ToString();
 
   REQUIRE(expectedOutput == actualOutput);
-
 }

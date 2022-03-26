@@ -6,7 +6,7 @@
 #define TERMINAL_STYLE_3538CC6FCDB14DF9A4F8CB08DD05C730_DEMO_FUNCTIONS_H_
 
 #include <string>
-#include <terminal_style/TStyler.hpp>
+#include <terminal_style/TerStyledText.hpp>
 #include <iostream>
 
 void ShowBasicFgColors();

@@ -62,26 +62,26 @@ void ShowFormats()
 void PrintInFgColor(const std::string& toPrint, TerminalStyle::Colors fgColor)
 {
   using namespace TerminalStyle;
-  TStyler style{};
+  TerStyledText style{};
 
   std::cout << style.WithFgColor(fgColor)
-    .StyleText(toPrint) << std::endl;
+    .WithText(toPrint) << std::endl;
 }
 
 void PrintInBgColor(const std::string& toPrint, TerminalStyle::Colors bgColor)
 {
   using namespace TerminalStyle;
-  TStyler style{};
+  TerStyledText style{};
 
   std::cout << style.WithBgColor(bgColor)
-    .StyleText(toPrint) << std::endl;
+    .WithText(toPrint) << std::endl;
 }
 
 void PrintInFormat(const std::string& toPrint, TerminalStyle::Format format)
 {
   using namespace TerminalStyle;
-  TStyler style{};
+  TerStyledText style{};
 
   std::cout << style.WithFormat(format)
-    .StyleText(toPrint) << std::endl;
+    .WithText(toPrint) << std::endl;
 }

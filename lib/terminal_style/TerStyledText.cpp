@@ -2,15 +2,16 @@
 // Created by nicegraphic on 2022-03-25.
 //
 
-#include "TStyler.hpp"
+#include "TerStyledText.hpp"
 namespace TerminalStyle
 {
-  TStyler& TStyler::WithFgColor(Colors newFgColor)
+  TerStyledText& TerStyledText::WithFgColor(Colors newFgColor)
   {
     currentFgColor = static_cast<unsigned int>(newFgColor);
     return *this;
   }
-  TStyler& TStyler::WithBgColor(Colors newBgColor)
+
+  TerStyledText& TerStyledText::WithBgColor(Colors newBgColor)
   {
     const static unsigned int k_offset_fg_bg_color{10U};
 
@@ -20,13 +21,18 @@ namespace TerminalStyle
 
     return *this;
   }
-  TStyler& TStyler::WithFormat(Format newFormat)
+  TerStyledText& TerStyledText::WithFormat(Format newFormat)
   {
 
     currentFormat = static_cast<unsigned int>(newFormat);
     return *this;
   }
-  std::string TStyler::StyleText(const std::string& toStyle) const
+  TerStyledText& TerStyledText::WithText(const std::string& toStyle)
+  {
+    text = toStyle;
+    return *this;
+  }
+  std::string TerStyledText::ToString() const
   {
     const static std::string k_left_start_delimiter{"\033["};
     const static std::string k_right_delimiter{"\033[0m"};
@@ -34,9 +40,13 @@ namespace TerminalStyle
     const static char k_left_end_delimiter{'m'};
 
     return k_left_start_delimiter +
-    std::to_string(currentFormat) + k_value_delimiter +
-    std::to_string(currentFgColor) + k_value_delimiter +
-    std::to_string(currentBgColor) + k_left_end_delimiter +
-    toStyle + k_right_delimiter;
+      std::to_string(currentFormat) + k_value_delimiter +
+      std::to_string(currentFgColor) + k_value_delimiter +
+      std::to_string(currentBgColor) + k_left_end_delimiter +
+      text + k_right_delimiter;
+  }
+  std::ostream& operator<<(std::ostream& os, const TerStyledText& text)
+  {
+    return os << text.ToString();
   }
 }
