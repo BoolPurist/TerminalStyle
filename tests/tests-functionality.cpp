@@ -6,7 +6,7 @@
 #include <terminal_style/TerStyledText.hpp>
 #include "test-cases.hpp"
 
-TEST_CASE("Testing")
+TEST_CASE("Testing fg colors")
 {
   using namespace TerminalStyle;
 
@@ -36,6 +36,38 @@ TEST_CASE("Testing")
 
   REQUIRE(expectedOutput == actualOutput);
 }
+
+TEST_CASE("Testing bg colors")
+{
+  using namespace TerminalStyle;
+
+  auto testCase = GENERATE(
+    CreateTestCaseBgColor(Colors::Black, 40),
+    CreateTestCaseBgColor(Colors::Red, 41),
+    CreateTestCaseBgColor(Colors::Green, 42),
+    CreateTestCaseBgColor(Colors::Yellow, 43),
+    CreateTestCaseBgColor(Colors::Blue, 44),
+    CreateTestCaseBgColor(Colors::Magenta, 45),
+    CreateTestCaseBgColor(Colors::Cyan, 46),
+    CreateTestCaseBgColor(Colors::LightGray, 47),
+    CreateTestCaseBgColor(Colors::DarkGray, 100),
+    CreateTestCaseBgColor(Colors::LightRed, 101),
+    CreateTestCaseBgColor(Colors::LightGreen, 102),
+    CreateTestCaseBgColor(Colors::LightYellow, 103),
+    CreateTestCaseBgColor(Colors::LightBlue, 104),
+    CreateTestCaseBgColor(Colors::LightMagenta, 105),
+    CreateTestCaseBgColor(Colors::LightCyan, 106),
+    CreateTestCaseBgColor(Colors::White, 107)
+  );
+
+  const auto& givenColor = testCase.first;
+  const auto& expectedOutput = testCase.second;
+
+  const auto actualOutput = TerStyledText().WithBgColor(givenColor).WithText(k_ContentString).ToString();
+
+  REQUIRE(expectedOutput == actualOutput);
+}
+
 
 TEST_CASE("Testing format, fg and bg color.")
 {

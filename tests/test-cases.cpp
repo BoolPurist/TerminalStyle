@@ -11,10 +11,25 @@ std::string CreateExpectedFgColor(unsigned int expectedFgColor)
   return "\033[0;" + std::to_string(expectedFgColor) +
   ";49m" + k_ContentString + "\033[0m";
 }
+
+std::string CreateExpectedBgColor(unsigned int expectedFgColor)
+{
+  using namespace std::string_literals;
+  return "\033[0;"s + "39"s + ";"s + std::to_string(expectedFgColor) + "m"s + k_ContentString + "\033[0m"s;
+}
+
+std::pair<TerminalStyle::Colors,std::string> CreateTestCaseBgColor(
+  TerminalStyle::Colors givenColor,
+  unsigned int expectedBgColor
+)
+{
+  return std::make_pair(givenColor, CreateExpectedBgColor(expectedBgColor));
+}
+
 std::pair<TerminalStyle::Colors,std::string> CreateTestCaseFgColor(
   TerminalStyle::Colors givenColor,
   unsigned int expectedFgColor
 )
 {
-  return {givenColor, CreateExpectedFgColor(expectedFgColor)};
+  return std::make_pair(givenColor, CreateExpectedFgColor(expectedFgColor));
 }
