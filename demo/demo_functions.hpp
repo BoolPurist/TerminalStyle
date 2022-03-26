@@ -11,6 +11,7 @@
 
 void ShowBasicFgColors();
 void ShowBasicBgColors();
+void PrintAnnouncement(const std::string& title);
 void PrintInFgColor(const std::string& toPrint, TerminalStyle::Colors fgColor);
 void PrintInBgColor(const std::string& toPrint, TerminalStyle::Colors bgColor);
 void PrintInFormat(const std::string& toPrint, TerminalStyle::Format format);

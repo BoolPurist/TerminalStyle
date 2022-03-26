@@ -8,55 +8,75 @@
 void ShowBasicFgColors()
 {
   using namespace TerminalStyle;
-  PrintInFgColor("Colored text", Colors::Black);
-  PrintInFgColor("Colored text", Colors::Red);
-  PrintInFgColor("Colored text", Colors::Green);
-  PrintInFgColor("Colored text", Colors::Yellow);
-  PrintInFgColor("Colored text", Colors::Blue);
-  PrintInFgColor("Colored text", Colors::Magenta);
-  PrintInFgColor("Colored text", Colors::Cyan);
-  PrintInFgColor("Colored text", Colors::LightGray);
-  PrintInFgColor("Colored text", Colors::DarkGray);
-  PrintInFgColor("Colored text", Colors::LightRed);
-  PrintInFgColor("Colored text", Colors::LightGreen);
-  PrintInFgColor("Colored text", Colors::LightYellow);
-  PrintInFgColor("Colored text", Colors::LightBlue);
-  PrintInFgColor("Colored text", Colors::LightMagenta);
-  PrintInFgColor("Colored text", Colors::LightCyan);
-  PrintInFgColor("Colored text", Colors::White);
 
+  PrintAnnouncement("Foreground Colors");
+
+  PrintInFgColor("Black", Colors::Black);
+  PrintInFgColor("Red", Colors::Red);
+  PrintInFgColor("Green", Colors::Green);
+  PrintInFgColor("Yellow", Colors::Yellow);
+  PrintInFgColor("Blue", Colors::Blue);
+  PrintInFgColor("Magenta", Colors::Magenta);
+  PrintInFgColor("Cyan", Colors::Cyan);
+  PrintInFgColor("Light Gray", Colors::LightGray);
+  PrintInFgColor("Dark Gray", Colors::DarkGray);
+  PrintInFgColor("Light Red", Colors::LightRed);
+  PrintInFgColor("Light Green", Colors::LightGreen);
+  PrintInFgColor("Light Yellow", Colors::LightYellow);
+  PrintInFgColor("Light Blue", Colors::LightBlue);
+  PrintInFgColor("Light Magenta", Colors::LightMagenta);
+  PrintInFgColor("Light Cyan", Colors::LightCyan);
+  PrintInFgColor("White", Colors::White);
+
+  std::cout << std::endl;
 }
 
 void ShowBasicBgColors()
 {
   using namespace TerminalStyle;
-  PrintInBgColor("Colored Background", Colors::Black);
-  PrintInBgColor("Colored Background", Colors::Red);
-  PrintInBgColor("Colored Background", Colors::Green);
-  PrintInBgColor("Colored Background", Colors::Yellow);
-  PrintInBgColor("Colored Background", Colors::Blue);
-  PrintInBgColor("Colored Background", Colors::Magenta);
-  PrintInFgColor("Colored Background", Colors::Cyan);
-  PrintInBgColor("Colored Background", Colors::LightGray);
-  PrintInBgColor("Colored Background", Colors::DarkGray);
-  PrintInBgColor("Colored Background", Colors::LightRed);
-  PrintInBgColor("Colored Background", Colors::LightGreen);
-  PrintInBgColor("Colored Background", Colors::LightYellow);
-  PrintInBgColor("Colored Background", Colors::LightBlue);
-  PrintInBgColor("Colored Background", Colors::LightMagenta);
-  PrintInBgColor("Colored Background", Colors::LightCyan);
-  PrintInBgColor("Colored Background", Colors::White);
+
+  PrintAnnouncement("Background Colors");
+
+  PrintInBgColor("Black", Colors::Black);
+  PrintInBgColor("Red", Colors::Red);
+  PrintInBgColor("Green", Colors::Green);
+  PrintInBgColor("Yellow", Colors::Yellow);
+  PrintInBgColor("Blue", Colors::Blue);
+  PrintInBgColor("Magenta", Colors::Magenta);
+  PrintInBgColor("Cyan", Colors::Cyan);
+  PrintInBgColor("Light Gray", Colors::LightGray);
+  PrintInBgColor("Dark Gray", Colors::DarkGray);
+  PrintInBgColor("Light Red", Colors::LightRed);
+  PrintInBgColor("Light Green", Colors::LightGreen);
+  PrintInBgColor("Light Yellow", Colors::LightYellow);
+  PrintInBgColor("Light Blue", Colors::LightBlue);
+  PrintInBgColor("Light Magenta", Colors::LightMagenta);
+  PrintInBgColor("Light Cyan", Colors::LightCyan);
+  PrintInBgColor("White", Colors::White);
+
+  std::cout << std::endl;
 }
 
 void ShowFormats()
 {
   using namespace TerminalStyle;
+
+  PrintAnnouncement("Formats");
+
   PrintInFormat("Bold", Format::Bold);
   PrintInFormat("Bold",Format::Dim);
   PrintInFormat("Bold",Format::Underlined);
   PrintInFormat("Bold",Format::Blink);
   PrintInFormat("Bold",Format::Reverse);
   PrintInFormat("Bold",Format::Hidden);
+
+  std::cout << std::endl;
+}
+
+void PrintAnnouncement(const std::string& title)
+{
+  std::cout << title << std::endl;
+  std::cout << std::string(50, '=') << '\n' << std::endl;
 }
 
 void PrintInFgColor(const std::string& toPrint, TerminalStyle::Colors fgColor)
