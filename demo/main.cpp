@@ -1,6 +1,5 @@
 #include "demo_functions.hpp"
 
-
 int main() {
   ShowBasicFgColors();
   ShowBasicBgColors();

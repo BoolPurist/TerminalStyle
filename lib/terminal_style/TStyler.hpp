@@ -16,12 +16,12 @@ namespace TerminalStyle
    public:
     TStyler& WithFgColor(Colors newFgColor);
     TStyler& WithBgColor(Colors newBgColor);
-    TStyler& WithFormat(Formating newFormat);
+    TStyler& WithFormat(Format newFormat);
     std::string StyleText(const std::string& toStyle) const;
    private:
     unsigned int currentFgColor = 39;
     unsigned int currentBgColor = 49;
-    unsigned int currentFormat = static_cast<unsigned int>(Formating::None);
+    unsigned int currentFormat = static_cast<unsigned int>(Format::None);
   };
 
 }

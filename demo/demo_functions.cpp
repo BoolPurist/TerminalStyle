@@ -14,6 +14,7 @@ void ShowBasicFgColors()
   PrintInFgColor("Colored text", Colors::Yellow);
   PrintInFgColor("Colored text", Colors::Blue);
   PrintInFgColor("Colored text", Colors::Magenta);
+  PrintInFgColor("Colored text", Colors::Cyan);
   PrintInFgColor("Colored text", Colors::LightGray);
   PrintInFgColor("Colored text", Colors::DarkGray);
   PrintInFgColor("Colored text", Colors::LightRed);
@@ -35,6 +36,7 @@ void ShowBasicBgColors()
   PrintInBgColor("Colored Background", Colors::Yellow);
   PrintInBgColor("Colored Background", Colors::Blue);
   PrintInBgColor("Colored Background", Colors::Magenta);
+  PrintInFgColor("Colored Background", Colors::Cyan);
   PrintInBgColor("Colored Background", Colors::LightGray);
   PrintInBgColor("Colored Background", Colors::DarkGray);
   PrintInBgColor("Colored Background", Colors::LightRed);
@@ -49,12 +51,12 @@ void ShowBasicBgColors()
 void ShowFormats()
 {
   using namespace TerminalStyle;
-  PrintInFormat("Bold", Formating::Bold);
-  PrintInFormat("Bold",Formating::Dim);
-  PrintInFormat("Bold",Formating::Underlined);
-  PrintInFormat("Bold",Formating::Blink);
-  PrintInFormat("Bold",Formating::Reverse);
-  PrintInFormat("Bold",Formating::Hidden);
+  PrintInFormat("Bold", Format::Bold);
+  PrintInFormat("Bold",Format::Dim);
+  PrintInFormat("Bold",Format::Underlined);
+  PrintInFormat("Bold",Format::Blink);
+  PrintInFormat("Bold",Format::Reverse);
+  PrintInFormat("Bold",Format::Hidden);
 }
 
 void PrintInFgColor(const std::string& toPrint, TerminalStyle::Colors fgColor)
@@ -75,7 +77,7 @@ void PrintInBgColor(const std::string& toPrint, TerminalStyle::Colors bgColor)
     .StyleText(toPrint) << std::endl;
 }
 
-void PrintInFormat(const std::string& toPrint, TerminalStyle::Formating format)
+void PrintInFormat(const std::string& toPrint, TerminalStyle::Format format)
 {
   using namespace TerminalStyle;
   TStyler style{};

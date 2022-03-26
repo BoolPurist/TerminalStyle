@@ -6,7 +6,7 @@
 #define TERMINAL_STYLE_FORMATS_H
 
 namespace TerminalStyle {
-    enum class Formating
+    enum class Format
     {
         None = 0,
         Bold = 1,
