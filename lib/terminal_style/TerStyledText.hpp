@@ -17,6 +17,8 @@ namespace TerminalStyle
 
    public:
     TerStyledText& WithFgColor(Colors newFgColor);
+    TerStyledText& WithFgColor(unsigned int newFgColor);
+    TerStyledText& WithBgColor(unsigned int newBgColor);
     TerStyledText& WithBgColor(Colors newBgColor);
     TerStyledText& WithFormat(Format newFormat);
     TerStyledText& WithText(const std::string& toStyle);

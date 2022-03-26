@@ -49,4 +49,19 @@ namespace TerminalStyle
   {
     return os << text.ToString();
   }
+
+  TerStyledText& TerStyledText::WithFgColor(unsigned int newFgColor)
+  {
+    currentBgColor = static_cast<unsigned int>(newFgColor);
+    currentFgColor = 5U;
+    currentFormat = 38U;
+    return *this;
+  }
+  TerStyledText& TerStyledText::WithBgColor(unsigned int newBgColor)
+  {
+    currentBgColor = static_cast<unsigned int>(newBgColor);
+    currentFgColor = 5U;
+    currentFormat = 48U;
+    return *this;
+  }
 }

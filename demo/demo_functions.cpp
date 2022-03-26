@@ -3,6 +3,7 @@
 //
 
 
+
 #include "demo_functions.hpp"
 
 void ShowBasicFgColors()
@@ -104,4 +105,58 @@ void PrintInFormat(const std::string& toPrint, TerminalStyle::Format format)
 
   std::cout << style.WithFormat(format)
     .WithText(toPrint) << std::endl;
+}
+void Show256FgColors()
+{
+  PrintAnnouncement("Printing 256 fg colors");
+
+  for (size_t i{0}, j{1}; i < 256; i++, j++)
+  {
+    Print256FgColor(i);
+    if (j / 10 >= 1)
+    {
+      j = 0;
+      std::cout << std::endl;
+    }
+  }
+
+  std::cout << '\n' << std::endl;
+}
+void Show256BgColors()
+{
+  PrintAnnouncement("Printing 256 bg colors");
+
+  for (size_t i{0}, j{1}; i < 256; i++, j++)
+  {
+    Print256BgColor(i);
+    if (j / 10 >= 1)
+    {
+      j = 0;
+      std::cout << std::endl;
+    }
+  }
+
+  std::cout << '\n' << std::endl;
+}
+void Print256FgColor(unsigned int number)
+{
+  using namespace TerminalStyle;
+  TerStyledText style{};
+
+  const std::string textNumber{std::to_string(number)};
+
+  size_t paddingSize{static_cast<size_t>(8U - textNumber.size())};
+  std::cout << style.WithFgColor(number)
+    .WithText(std::string(paddingSize, ' ') + textNumber);
+}
+void Print256BgColor(unsigned int number)
+{
+  using namespace TerminalStyle;
+  TerStyledText style{};
+
+  const std::string textNumber{std::to_string(number)};
+
+  size_t paddingSize{static_cast<size_t>(8U - textNumber.size())};
+  std::cout << style.WithBgColor(number)
+    .WithText(std::string(paddingSize, ' ') + textNumber);
 }
