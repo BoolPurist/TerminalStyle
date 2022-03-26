@@ -108,35 +108,11 @@ void PrintInFormat(const std::string& toPrint, TerminalStyle::Format format)
 }
 void Show256FgColors()
 {
-  PrintAnnouncement("Printing 256 fg colors");
-
-  for (size_t i{0}, j{1}; i < 256; i++, j++)
-  {
-    Print256FgColor(i);
-    if (j / 10 >= 1)
-    {
-      j = 0;
-      std::cout << std::endl;
-    }
-  }
-
-  std::cout << '\n' << std::endl;
+  Print256Colors("Printing 256 fg colors", Print256FgColor);
 }
 void Show256BgColors()
 {
-  PrintAnnouncement("Printing 256 bg colors");
-
-  for (size_t i{0}, j{1}; i < 256; i++, j++)
-  {
-    Print256BgColor(i);
-    if (j / 10 >= 1)
-    {
-      j = 0;
-      std::cout << std::endl;
-    }
-  }
-
-  std::cout << '\n' << std::endl;
+  Print256Colors("Printing 256 bg colors", Print256BgColor);
 }
 void Print256FgColor(unsigned int number)
 {
@@ -159,4 +135,23 @@ void Print256BgColor(unsigned int number)
   size_t paddingSize{static_cast<size_t>(8U - textNumber.size())};
   std::cout << style.WithBgColor(number)
     .WithText(std::string(paddingSize, ' ') + textNumber);
+}
+void Print256Colors(
+  const std::string& title,
+  std::function<void(unsigned int)> printColorFunc
+)
+{
+  PrintAnnouncement(title);
+
+  for (unsigned int i{0}, j{1}; i < 256; i++, j++)
+  {
+    printColorFunc(i);
+    if (j / 10 >= 1)
+    {
+      j = 0;
+      std::cout << std::endl;
+    }
+  }
+
+  std::cout << '\n' << std::endl;
 }

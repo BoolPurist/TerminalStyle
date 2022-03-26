@@ -9,6 +9,7 @@
 #include <terminal_style/TerStyledText.hpp>
 #include <iostream>
 #include <iomanip>
+#include <functional>
 
 void ShowBasicFgColors();
 void ShowBasicBgColors();
@@ -19,6 +20,12 @@ void PrintAnnouncement(const std::string& title);
 void PrintInFgColor(const std::string& toPrint, TerminalStyle::Colors fgColor);
 void PrintInBgColor(const std::string& toPrint, TerminalStyle::Colors bgColor);
 void PrintInFormat(const std::string& toPrint, TerminalStyle::Format format);
+
+
+void Print256Colors(
+  const std::string& title,
+  std::function<void(unsigned int)> printColorFunc
+);
 void Print256FgColor(unsigned int number);
 void Print256BgColor(unsigned int number);
 
