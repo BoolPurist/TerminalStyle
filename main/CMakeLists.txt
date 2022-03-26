@@ -1,2 +1,0 @@
-add_executable(terminal_style_main main.cpp)
-target_link_libraries(terminal_style_main PRIVATE terminal_style_lib)

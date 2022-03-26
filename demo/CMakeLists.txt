@@ -1,0 +1,2 @@
+add_executable(terminal_style_main main.cpp demo_functions.hpp demo_functions.cpp)
+target_link_libraries(terminal_style_main PRIVATE terminal_style_lib)

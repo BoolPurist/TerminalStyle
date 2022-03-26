@@ -7,16 +7,16 @@
 
 namespace TerminalStyle
 {
-    enum class Colors
+    enum class Colors : unsigned int
     {
-        Black = 40,
-        Red,
-        Green,
-        Yellow,
-        Blue,
-        Magenta,
-        Cyan,
-        LightGray,
+        Black = 30U,
+        Red = 31U,
+        Green = 32U,
+        Yellow = 33U,
+        Blue = 34U,
+        Magenta = 35U,
+        Cyan = 36U,
+        LightGray = 90U,
         DarkGray,
         LightRed,
         LightGreen,
