@@ -2,11 +2,16 @@
 // Created by nicegraphic on 2022-03-25.
 //
 
+#include <iostream>
 #include "TerStyledText.hpp"
 namespace TStyle
 {
   TerStyledText::TerStyledText(const std::string& startText)
   : text{startText}
+  {}
+
+  TerStyledText::TerStyledText(std::string&& startText)
+    : text{std::move(startText)}
   {}
 
   TerStyledText& TerStyledText::WithFgColor(Colors newFgColor)
@@ -40,6 +45,11 @@ namespace TStyle
   TerStyledText& TerStyledText::WithText(const std::string& toStyle)
   {
     text = toStyle;
+    return *this;
+  }
+  TerStyledText& TerStyledText::WithText(std::string&& toStyle)
+  {
+    text = std::move(toStyle);
     return *this;
   }
   std::string TerStyledText::ToString()
