@@ -1,14 +1,14 @@
 # How to use it
 
 This library provides its functionality in the namespace TStyle.
-To use it include the following header.
+To use it, include the following header.
 
 ```cpp
 #include <terminal_style/TerStyledText.hpp>
 ```
 
 The library provides a class called **TerStyledText**. This class works like builder object via 
-method chaining to configure the output of text.
+method chaining to configure color and formatting of text.
 
 The printing of a text can be altered in 3 areas. 
 
@@ -36,11 +36,26 @@ The output will be
 
 ![underlined_red_text](./pictures/underlined_red_text.png)
 
+Note: To print out any text, you need to specify a text via 
+**WithText(const std::string& toStyle)** like the in example above.
 
 ## Changing Format
 The format of text can be changed by the method **WithFormat(Colors newFgColor)**.
 
 The enum **Format** contains all possible options like bold or underlining.
+
+### Example for changing format:
+```c++
+  TStyle::TerStyledText formatter{};
+
+  std::cout << formatter.WithText("Underlined")
+  .WithFormat(TStyle::Format::Underlined)
+  << std::endl;
+```
+
+Output:
+
+![underlined](./pictures/underlined.png)
 
 ### Possible formats:
 
@@ -48,11 +63,39 @@ The enum **Format** contains all possible options like bold or underlining.
 
 ## Changing foreground Color or background via enum value
 
+The colors provided by the enum values are supported by most terminals. 
+
 The foreground color of text can be changed via method **WithFgColor(Colors newFgColor)**.
 The background color of text can be changed via method **WithBgColor(Colors newBgColor)**.
 
 The enum **Colors** indicates with its constants values like Red or Blue in which color a text can
 be printed.
+
+### Example of changing background color for text
+```c++
+    TStyle::TerStyledText formatter{};
+
+    std::cout << formatter.WithText("Background Color")
+    .WithBgColor(TStyle::Colors::DarkGray)
+    << std::endl;
+```
+
+**Output**
+
+![lightGray_background_color](./pictures/lightGray_background_color.png)
+
+### Example of changing foreground color for text
+```c++
+    TStyle::TerStyledText formatter{};
+    
+    std::cout << formatter.WithText("Foreground Color")
+    .WithFgColor(TStyle::Colors::Green)
+    << std::endl;
+```
+
+**Output**
+
+![green_foreground_color](./pictures/green_foreground_color.png)
 
 ### Possible foreground colors via enum values: 
 
@@ -65,7 +108,11 @@ be printed.
 
 ## Changing foreground Color or background via unsigned numbers.
 
-Text can be printed in extended color range.
+Text can be printed in extended color range. 
+
+Note: Not all terminals support all colors in the extended range.
+See this [table](https://misc.flogisoft.com/bash/tip_colors_and_formatting#terminals_compatibility)  
+for compatibility 
 
 ### All possible colors for foreground
 
