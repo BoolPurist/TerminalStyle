@@ -8,7 +8,6 @@
 #include "Formats.hpp"
 #include "Colors.hpp"
 #include <string>
-#include <ostream>
 
 namespace TStyle
 {

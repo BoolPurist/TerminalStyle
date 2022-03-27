@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "TerStyledText.hpp"
+
 namespace TStyle
 {
   TerStyledText::TerStyledText(const std::string& startText)
