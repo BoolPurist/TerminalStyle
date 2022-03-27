@@ -78,6 +78,31 @@ TEST_CASE("Testing with normal bg, extended fg color and bold format.")
     });
 }
 
+TEST_CASE("Testing several styling to see if format, fg- and bg color are updated.")
+{
+  using namespace TerminalStyle;
+
+  TerStyledText toStyle{};
+
+  std::string currentOutput = toStyle.WithText(" Printing ")
+    .WithBgColor(Colors::Red).ToString();
+
+  REQUIRE("\033[0;39;41m Printing \033[0m" == currentOutput);
+
+  currentOutput = toStyle.WithText(" Printing ")
+    .WithFgColor(Colors::Black).WithBgColor(Colors::Blue).ToString();
+
+  REQUIRE("\033[0;30;44m Printing \033[0m" == currentOutput);
+
+  // Testing with new format, extended- fg and bg color.
+  currentOutput = toStyle.WithText(" Printing ").WithFormat(Format::Bold)
+    .WithFgColor(104).WithBgColor(120).ToString();
+
+  REQUIRE("\033[1;38;5;104;48;5;120m Printing \033[0m" == currentOutput);
+
+
+}
+
 void TestOneMixing(
   const std::string& expected,
   const std::function<std::string()>& builderCall

@@ -22,16 +22,20 @@ namespace TerminalStyle
     TerStyledText& WithBgColor(Colors newBgColor);
     TerStyledText& WithFormat(Format newFormat);
     TerStyledText& WithText(const std::string& toStyle);
-    std::string ToString() const;
+    std::string ToString();
 
-    friend std::ostream& operator<<(std::ostream& os, const TerStyledText& text);
+    friend std::ostream& operator<<(std::ostream& os, TerStyledText text);
    private:
     unsigned int currentFgColor = 39;
     unsigned int currentBgColor = 49;
-    std::string text{};
     unsigned int currentFormat = static_cast<unsigned int>(Format::None);
+    std::string text{};
     bool extendedFgColorCode{};
     bool extendedBgColorCode{};
+    std::string prefix{};
+    bool isPrefixUpToDate{};
+
+    void CreatePrefixIfNeeded();
   };
 
 }
