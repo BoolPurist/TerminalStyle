@@ -91,14 +91,4 @@ TEST_CASE("Testing bg colors")
 }
 
 
-TEST_CASE("Testing format, fg and bg color.")
-{
-  using namespace TerminalStyle;
 
-  std::string expectedOutput{"\033[1;31;42m Yes it is awful \033[0m"};
-  std::string actualOutput = TerStyledText().WithFormat(Format::Bold)
-    .WithFgColor(Colors::Red).WithBgColor(Colors::Green)
-    .WithText(" Yes it is awful ").ToString();
-
-  REQUIRE(expectedOutput == actualOutput);
-}

@@ -30,6 +30,8 @@ namespace TerminalStyle
     unsigned int currentBgColor = 49;
     std::string text{};
     unsigned int currentFormat = static_cast<unsigned int>(Format::None);
+    bool extendedFgColorCode{};
+    bool extendedBgColorCode{};
   };
 
 }

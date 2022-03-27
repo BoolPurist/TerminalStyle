@@ -8,5 +8,11 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(catch2)
 
-add_executable(testing tests-entry.cpp tests-functionality.cpp test-cases.cpp test-cases.hpp)
+add_executable(testing
+        tests-entry.cpp
+        test-standard-codes-format-fgColor-bgColor.cpp
+        test-cases.cpp
+        test-cases.hpp
+        test-mixing-codes.cpp
+)
 target_link_libraries(testing PRIVATE Catch2::Catch2 terminal_style_lib)
