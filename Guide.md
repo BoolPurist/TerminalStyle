@@ -37,7 +37,23 @@ The output will be
 ![underlined_red_text](./pictures/underlined_red_text.png)
 
 Note: To print out any text, you need to specify a text via 
-**WithText(const std::string& toStyle)** like the in example above.
+**WithText(const std::string& toStyle)** like in the example above.
+
+You can also specify a text as argument in the constructor.
+
+### Example with given text in constructor
+
+```c++
+    TStyle::TerStyledText formatter{"Start text"};
+    
+    std::cout << formatter
+    .WithFgColor(TStyle::Colors::Red)
+    << std::endl;
+```
+
+Output:
+
+![red_startText](./pictures/red_startText.png)
 
 ## Changing Format
 The format of text can be changed by the method **WithFormat(Colors newFgColor)**.

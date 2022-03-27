@@ -2,10 +2,10 @@
 
 int main() {
 
-  TStyle::TerStyledText formatter{};
+  TStyle::TerStyledText formatter{"Start text"};
 
-  std::cout << formatter.WithText("Foreground Color")
-  .WithFgColor(TStyle::Colors::Green)
+  std::cout << formatter
+  .WithFgColor(TStyle::Colors::Red)
   << std::endl;
 //  ShowBasicFgColors();
 //  ShowBasicBgColors();
