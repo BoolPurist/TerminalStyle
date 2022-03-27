@@ -16,12 +16,20 @@ namespace TStyle
   {
 
    public:
+    /// Sets the text color according to the enum value newFgColor
     TerStyledText& WithFgColor(Colors newFgColor);
-    TerStyledText& WithFgColor(unsigned int newFgColor);
-    TerStyledText& WithBgColor(unsigned int newBgColor);
+    /// Sets the background color according to the enum value newBgColor
     TerStyledText& WithBgColor(Colors newBgColor);
+    /// Sets the text color according to the a number between 0 and 255.
+    TerStyledText& WithFgColor(unsigned int newFgColor);
+    /// Sets the background color according to the a number between 0 and 255.
+    TerStyledText& WithBgColor(unsigned int newBgColor);
+    /// Sets the formats for text according to the enum value newFormat .
     TerStyledText& WithFormat(Format newFormat);
+    /// Sets the text to printed with a certain format, fg and bg color.
     TerStyledText& WithText(const std::string& toStyle);
+    /// Returns the text surrounded by the left and right encoding for the terminal
+    /// to know which in color or format the text should be printed.
     std::string ToString();
 
     friend std::ostream& operator<<(std::ostream& os, TerStyledText text);
