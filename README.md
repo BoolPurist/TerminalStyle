@@ -53,7 +53,7 @@ Library is build with **C++ 14**.
 
 The library can be integrated via cmake.
 
-1. Add this respo as submodule to your respo.
+1. Add this respo as submodule with url "https://github.com/BoolPurist/TerminalStyle.git" to your respo.
 2. Include this library into pipeline via 
 
 ```cmake
