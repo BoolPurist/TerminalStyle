@@ -16,6 +16,8 @@ namespace TStyle
   {
 
    public:
+    TerStyledText() = default;
+    explicit TerStyledText(const std::string& startText);
     /// Sets the text color according to the enum value newFgColor
     TerStyledText& WithFgColor(Colors newFgColor);
     /// Sets the background color according to the enum value newBgColor

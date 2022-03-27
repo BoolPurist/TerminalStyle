@@ -5,6 +5,10 @@
 #include "TerStyledText.hpp"
 namespace TStyle
 {
+  TerStyledText::TerStyledText(const std::string& startText)
+  : text{startText}
+  {}
+
   TerStyledText& TerStyledText::WithFgColor(Colors newFgColor)
   {
     extendedFgColorCode = false;
@@ -86,4 +90,6 @@ namespace TStyle
     }
     isPrefixUpToDate = true;
   }
+
+
 }

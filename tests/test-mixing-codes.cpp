@@ -103,6 +103,19 @@ TEST_CASE("Testing several styling to see if format, fg- and bg color are update
 
 }
 
+TEST_CASE("Testing constructor with start text")
+{
+  auto styler = TStyle::TerStyledText("Start text");
+
+  styler.WithFgColor(TStyle::Colors::Red);
+  REQUIRE("\033[0;31;49mStart text\033[0m" == styler.ToString());
+
+  // Should override start text.
+  styler.WithText("New Text");
+
+  REQUIRE("\033[0;31;49mNew Text\033[0m" == styler.ToString());
+}
+
 void TestOneMixing(
   const std::string& expected,
   const std::function<std::string()>& builderCall
