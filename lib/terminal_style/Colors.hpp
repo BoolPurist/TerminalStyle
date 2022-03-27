@@ -9,6 +9,7 @@ namespace TStyle
 {
     enum class Colors : unsigned int
     {
+        Default= 39U,
         Black = 30U,
         Red = 31U,
         Green = 32U,

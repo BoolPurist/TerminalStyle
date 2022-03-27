@@ -36,8 +36,8 @@ namespace TStyle
 
     friend std::ostream& operator<<(std::ostream& os, TerStyledText text);
    private:
-    unsigned int currentFgColor = 39;
-    unsigned int currentBgColor = 49;
+    unsigned int currentFgColor = static_cast<unsigned int>(Colors::Default);
+    unsigned int currentBgColor = static_cast<unsigned int>(Colors::Default) + 10U;
     unsigned int currentFormat = static_cast<unsigned int>(Format::None);
     std::string text{};
     bool extendedFgColorCode{};

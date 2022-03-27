@@ -3,6 +3,30 @@
 Servers as a library to allow print messages with a chosen foreground/background color, format 
 in a linux terminal.
 
+With this library you can do stuff like this
+
+![teaser_example](./pictures/teaser_example.png)
+
+The code which produced this example
+
+```c++
+    using namespace TStyle;
+    
+    auto toPrint = TerStyledText("Hello ")
+    .WithFgColor(Colors::Green);
+    std::cout << toPrint;
+    
+    std::cout << toPrint
+    .WithFgColor(Colors::Red)
+    .WithBgColor(Colors::White).WithText("World");
+    
+    std::cout << toPrint.WithText(" out there")
+    .WithFormat(Format::Bold)
+    .WithFgColor(Colors::Default)
+    .WithBgColor(Colors::Default)
+    << std::endl;
+```
+
 ## Limitation
 
 The functionality will work only in unix terminals like XFCE4 Terminal or xTerm for example.
@@ -48,6 +72,9 @@ See the [Guide](./Guide.md)
 
 Whenever a TerStyle instance is written to an output stream, the given text
 is inserted with a special encoding. This encoding has 2 parts, left one and right one.
+
+The left and right part of the encoding is not shown on the terminal output. 
+It is instead only read by the terminal to change color and formatting of a text.
 
 The right part is always in the form ( \033[0m ) and all other text written to the output stream
 is not interpreted with a format or color of a previous operation.
