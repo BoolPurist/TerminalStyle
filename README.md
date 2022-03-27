@@ -1,5 +1,21 @@
 # Terminal Style
 
+## Table of content
+
+[Teaser](#Teaser)
+
+[Limitation](#Limitation)
+
+[How to integrate this library in a project](#How-to-integrate-this-library-in-a-project)
+
+[Build options](#Build-options)
+
+[How to use it](#How-to-use-it)
+
+[How does it work](#How-does-it-work)
+
+## Teaser
+
 Servers as a library to allow print messages with a chosen foreground/background color, format 
 in a linux terminal.
 
