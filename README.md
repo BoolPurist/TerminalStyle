@@ -47,6 +47,8 @@ The code which produced this example
 
 The functionality will work only in unix terminals like XFCE4 Terminal or xTerm for example.
 
+Library is build with **C++ 14**.
+
 ## How to integrate this library in a project
 
 The library can be integrated via cmake.
