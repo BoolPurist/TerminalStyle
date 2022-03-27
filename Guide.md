@@ -3,9 +3,13 @@
 ## Table of content
 
 [Include it](#Include-it)
+
 [How to use it generally](#How-to-use-it-generally.)
+
 [Changing-Format](#Changing-Format)
+
 [Changing foreground Color or background via enum value](#Changing-foreground-Color-or-background-via-enum-value)
+
 [Changing foreground Color or background via unsigned numbers](#Changing-foreground-Color-or-background-via-unsigned-numbers.)
 
 ## Include it
