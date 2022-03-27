@@ -12,22 +12,22 @@ void ShowBasicFgColors()
 
   PrintAnnouncement("Foreground Colors");
 
-  PrintInFgColor("Black", Colors::Black);
-  PrintInFgColor("Red", Colors::Red);
-  PrintInFgColor("Green", Colors::Green);
-  PrintInFgColor("Yellow", Colors::Yellow);
-  PrintInFgColor("Blue", Colors::Blue);
-  PrintInFgColor("Magenta", Colors::Magenta);
-  PrintInFgColor("Cyan", Colors::Cyan);
-  PrintInFgColor("Light Gray", Colors::LightGray);
-  PrintInFgColor("Dark Gray", Colors::DarkGray);
-  PrintInFgColor("Light Red", Colors::LightRed);
-  PrintInFgColor("Light Green", Colors::LightGreen);
-  PrintInFgColor("Light Yellow", Colors::LightYellow);
-  PrintInFgColor("Light Blue", Colors::LightBlue);
-  PrintInFgColor("Light Magenta", Colors::LightMagenta);
-  PrintInFgColor("Light Cyan", Colors::LightCyan);
-  PrintInFgColor("White", Colors::White);
+  PrintInFgColor("Colors::Black", Colors::Black);
+  PrintInFgColor ("Colors::Red", Colors::Red);
+  PrintInFgColor ("Colors::Green", Colors::Green);
+  PrintInFgColor ("Colors::Yellow", Colors::Yellow);
+  PrintInFgColor ("Colors::Blue", Colors::Blue);
+  PrintInFgColor ("Colors::Magenta", Colors::Magenta);
+  PrintInFgColor ("Colors::Cyan", Colors::Cyan);
+  PrintInFgColor ("Colors::LightGray", Colors::LightGray);
+  PrintInFgColor ("Colors::DarkGray", Colors::DarkGray);
+  PrintInFgColor ("Colors::LightRed", Colors::LightRed);
+  PrintInFgColor ("Colors::LightGreen", Colors::LightGreen);
+  PrintInFgColor ("Colors::LightYellow", Colors::LightYellow);
+  PrintInFgColor ("Colors::LightBlue", Colors::LightBlue);
+  PrintInFgColor ("Colors::LightMagenta", Colors::LightMagenta);
+  PrintInFgColor ("Colors::LightCyan", Colors::LightCyan);
+  PrintInFgColor ("Colors::White", Colors::White);
 
   std::cout << std::endl;
 }
@@ -38,22 +38,22 @@ void ShowBasicBgColors()
 
   PrintAnnouncement("Background Colors");
 
-  PrintInBgColor("Black", Colors::Black);
-  PrintInBgColor("Red", Colors::Red);
-  PrintInBgColor("Green", Colors::Green);
-  PrintInBgColor("Yellow", Colors::Yellow);
-  PrintInBgColor("Blue", Colors::Blue);
-  PrintInBgColor("Magenta", Colors::Magenta);
-  PrintInBgColor("Cyan", Colors::Cyan);
-  PrintInBgColor("Light Gray", Colors::LightGray);
-  PrintInBgColor("Dark Gray", Colors::DarkGray);
-  PrintInBgColor("Light Red", Colors::LightRed);
-  PrintInBgColor("Light Green", Colors::LightGreen);
-  PrintInBgColor("Light Yellow", Colors::LightYellow);
-  PrintInBgColor("Light Blue", Colors::LightBlue);
-  PrintInBgColor("Light Magenta", Colors::LightMagenta);
-  PrintInBgColor("Light Cyan", Colors::LightCyan);
-  PrintInBgColor("White", Colors::White);
+  PrintInBgColor("Colors::Black", Colors::Black);
+  PrintInBgColor("Colors::Red", Colors::Red);
+  PrintInBgColor("Colors::Green", Colors::Green);
+  PrintInBgColor("Colors::Yellow", Colors::Yellow);
+  PrintInBgColor("Colors::Blue", Colors::Blue);
+  PrintInBgColor("Colors::Magenta", Colors::Magenta);
+  PrintInBgColor("Colors::Cyan", Colors::Cyan);
+  PrintInBgColor("Colors::LightGray", Colors::LightGray);
+  PrintInBgColor("Colors::DarkGray", Colors::DarkGray);
+  PrintInBgColor("Colors::LightRed", Colors::LightRed);
+  PrintInBgColor("Colors::LightGreen", Colors::LightGreen);
+  PrintInBgColor("Colors::LightYellow", Colors::LightYellow);
+  PrintInBgColor("Colors::LightBlue", Colors::LightBlue);
+  PrintInBgColor("Colors::LightMagenta", Colors::LightMagenta);
+  PrintInBgColor("Colors::LightCyan", Colors::LightCyan);
+  PrintInBgColor("Colors::White", Colors::White);
 
   std::cout << std::endl;
 }
@@ -64,12 +64,12 @@ void ShowFormats()
 
   PrintAnnouncement("Formats");
 
-  PrintInFormat("Bold", Format::Bold);
-  PrintInFormat("Bold",Format::Dim);
-  PrintInFormat("Bold",Format::Underlined);
-  PrintInFormat("Bold",Format::Blink);
-  PrintInFormat("Bold",Format::Reverse);
-  PrintInFormat("Bold",Format::Hidden);
+  PrintInFormat("Format::Bold", Format::Bold);
+  PrintInFormat("Format::Dim",Format::Dim);
+  PrintInFormat("Format::Underlined",Format::Underlined);
+  PrintInFormat("Format::Blink",Format::Blink);
+  PrintInFormat("Format::Reverse",Format::Reverse);
+  PrintInFormat("Format::Hidden",Format::Hidden);
 
   std::cout << std::endl;
 }
