@@ -12,18 +12,18 @@
 
 const std::string k_ContentString{"Text"};
 
-std::pair<TerminalStyle::Colors, std::string> CreateTestCaseFgColor(
-  TerminalStyle::Colors givenColor,
+std::pair<TStyle::Colors, std::string> CreateTestCaseFgColor(
+  TStyle::Colors givenColor,
   unsigned int expectedFgColor
 );
 
-std::pair<TerminalStyle::Colors,std::string> CreateTestCaseBgColor(
-  TerminalStyle::Colors givenColor,
+std::pair<TStyle::Colors, std::string> CreateTestCaseBgColor(
+  TStyle::Colors givenColor,
   unsigned int expectedBgColor
 );
 
-std::pair<TerminalStyle::Format, std::string> CreateTestCaseFormat(
-  TerminalStyle::Format givenFormat,
+std::pair<TStyle::Format, std::string> CreateTestCaseFormat(
+  TStyle::Format givenFormat,
   unsigned int expectedFormat
 );
 

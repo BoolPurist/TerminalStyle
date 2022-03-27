@@ -8,7 +8,7 @@
 
 void ShowBasicFgColors()
 {
-  using namespace TerminalStyle;
+  using namespace TStyle;
 
   PrintAnnouncement("Foreground Colors");
 
@@ -34,7 +34,7 @@ void ShowBasicFgColors()
 
 void ShowBasicBgColors()
 {
-  using namespace TerminalStyle;
+  using namespace TStyle;
 
   PrintAnnouncement("Background Colors");
 
@@ -60,7 +60,7 @@ void ShowBasicBgColors()
 
 void ShowFormats()
 {
-  using namespace TerminalStyle;
+  using namespace TStyle;
 
   PrintAnnouncement("Formats");
 
@@ -80,27 +80,27 @@ void PrintAnnouncement(const std::string& title)
   std::cout << std::string(50, '=') << '\n' << std::endl;
 }
 
-void PrintInFgColor(const std::string& toPrint, TerminalStyle::Colors fgColor)
+void PrintInFgColor(const std::string& toPrint, TStyle::Colors fgColor)
 {
-  using namespace TerminalStyle;
+  using namespace TStyle;
   TerStyledText style{};
 
   std::cout << style.WithFgColor(fgColor)
     .WithText(toPrint) << std::endl;
 }
 
-void PrintInBgColor(const std::string& toPrint, TerminalStyle::Colors bgColor)
+void PrintInBgColor(const std::string& toPrint, TStyle::Colors bgColor)
 {
-  using namespace TerminalStyle;
+  using namespace TStyle;
   TerStyledText style{};
 
   std::cout << style.WithBgColor(bgColor)
     .WithText(toPrint) << std::endl;
 }
 
-void PrintInFormat(const std::string& toPrint, TerminalStyle::Format format)
+void PrintInFormat(const std::string& toPrint, TStyle::Format format)
 {
-  using namespace TerminalStyle;
+  using namespace TStyle;
   TerStyledText style{};
 
   std::cout << style.WithFormat(format)
@@ -116,7 +116,7 @@ void Show256BgColors()
 }
 void Print256FgColor(unsigned int number)
 {
-  using namespace TerminalStyle;
+  using namespace TStyle;
   TerStyledText style{};
 
   const std::string textNumber{std::to_string(number)};
@@ -127,7 +127,7 @@ void Print256FgColor(unsigned int number)
 }
 void Print256BgColor(unsigned int number)
 {
-  using namespace TerminalStyle;
+  using namespace TStyle;
   TerStyledText style{};
 
   const std::string textNumber{std::to_string(number)};

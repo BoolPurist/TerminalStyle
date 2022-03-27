@@ -3,7 +3,7 @@
 //
 
 #include "TerStyledText.hpp"
-namespace TerminalStyle
+namespace TStyle
 {
   TerStyledText& TerStyledText::WithFgColor(Colors newFgColor)
   {

@@ -8,7 +8,7 @@
 
 TEST_CASE("Testing format")
 {
-  using namespace TerminalStyle;
+  using namespace TStyle;
 
   auto testCase = GENERATE(
     CreateTestCaseFormat(Format::Bold, 1),
@@ -30,7 +30,7 @@ TEST_CASE("Testing format")
 
 TEST_CASE("Testing fg colors")
 {
-  using namespace TerminalStyle;
+  using namespace TStyle;
 
   auto testCase = GENERATE(
     CreateTestCaseFgColor(Colors::Black, 30),
@@ -61,7 +61,7 @@ TEST_CASE("Testing fg colors")
 
 TEST_CASE("Testing bg colors")
 {
-  using namespace TerminalStyle;
+  using namespace TStyle;
 
   auto testCase = GENERATE(
     CreateTestCaseBgColor(Colors::Black, 40),

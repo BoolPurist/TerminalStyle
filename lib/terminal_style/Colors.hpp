@@ -5,7 +5,7 @@
 #ifndef TERMINAL_STYLE_COLORS_H
 #define TERMINAL_STYLE_COLORS_H
 
-namespace TerminalStyle
+namespace TStyle
 {
     enum class Colors : unsigned int
     {

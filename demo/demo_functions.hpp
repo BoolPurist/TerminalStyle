@@ -17,9 +17,9 @@ void ShowFormats();
 void Show256FgColors();
 void Show256BgColors();
 void PrintAnnouncement(const std::string& title);
-void PrintInFgColor(const std::string& toPrint, TerminalStyle::Colors fgColor);
-void PrintInBgColor(const std::string& toPrint, TerminalStyle::Colors bgColor);
-void PrintInFormat(const std::string& toPrint, TerminalStyle::Format format);
+void PrintInFgColor(const std::string& toPrint, TStyle::Colors fgColor);
+void PrintInBgColor(const std::string& toPrint, TStyle::Colors bgColor);
+void PrintInFormat(const std::string& toPrint, TStyle::Format format);
 
 
 void Print256Colors(

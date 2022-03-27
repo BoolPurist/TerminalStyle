@@ -16,7 +16,7 @@ TEST_CASE("Testing format, fg and bg color.")
   TestOneMixing(
     "\033[1;31;42m Yes it is awful \033[0m",
     []() -> std::string {
-      using namespace TerminalStyle;
+      using namespace TStyle;
       return TerStyledText().WithFormat(Format::Bold)
       .WithFgColor(Colors::Red).WithBgColor(Colors::Green)
       .WithText(" Yes it is awful ").ToString();
@@ -28,7 +28,7 @@ TEST_CASE("Testing with extended fg color.")
   TestOneMixing(
     "\033[0;38;5;94;49m Yeah \033[0m",
     []() -> std::string {
-      using namespace TerminalStyle;
+      using namespace TStyle;
       return TerStyledText().WithFgColor(94)
         .WithText(" Yeah ").ToString();
     });
@@ -39,7 +39,7 @@ TEST_CASE("Testing with extended bg color.")
   TestOneMixing(
     "\033[0;39;48;5;78m Yeah \033[0m",
     []() -> std::string {
-      using namespace TerminalStyle;
+      using namespace TStyle;
       return TerStyledText().WithBgColor(78)
         .WithText(" Yeah ").ToString();
     });
@@ -50,7 +50,7 @@ TEST_CASE("Testing with extended bg and fg color.")
   TestOneMixing(
     "\033[0;38;5;48;48;5;78m Yeah \033[0m",
     []() -> std::string {
-      using namespace TerminalStyle;
+      using namespace TStyle;
       return TerStyledText().WithBgColor(78).WithFgColor(48)
         .WithText(" Yeah ").ToString();
     });
@@ -61,7 +61,7 @@ TEST_CASE("Testing with extended bg and normal fg color.")
   TestOneMixing(
     "\033[0;31;48;5;78m Yeah \033[0m",
     []() -> std::string {
-      using namespace TerminalStyle;
+      using namespace TStyle;
       return TerStyledText().WithBgColor(78).WithFgColor(Colors::Red)
         .WithText(" Yeah ").ToString();
     });
@@ -72,7 +72,7 @@ TEST_CASE("Testing with normal bg, extended fg color and bold format.")
   TestOneMixing(
     "\033[1;38;5;145;44m Yeah \033[0m",
     []() -> std::string {
-      using namespace TerminalStyle;
+      using namespace TStyle;
       return TerStyledText().WithFgColor(145).WithBgColor(Colors::Blue)
         .WithFormat(Format::Bold).WithText(" Yeah ").ToString();
     });
@@ -80,7 +80,7 @@ TEST_CASE("Testing with normal bg, extended fg color and bold format.")
 
 TEST_CASE("Testing several styling to see if format, fg- and bg color are updated.")
 {
-  using namespace TerminalStyle;
+  using namespace TStyle;
 
   TerStyledText toStyle{};
 

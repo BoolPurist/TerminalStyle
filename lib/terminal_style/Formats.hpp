@@ -5,7 +5,7 @@
 #ifndef TERMINAL_STYLE_FORMATS_H
 #define TERMINAL_STYLE_FORMATS_H
 
-namespace TerminalStyle {
+namespace TStyle {
     enum class Format
     {
         None = 0,

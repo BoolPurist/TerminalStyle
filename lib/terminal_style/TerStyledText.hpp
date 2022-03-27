@@ -10,7 +10,7 @@
 #include <string>
 #include <ostream>
 
-namespace TerminalStyle
+namespace TStyle
 {
   class TerStyledText
   {
