@@ -42,6 +42,10 @@ The format of text can be changed by the method **WithFormat(Colors newFgColor)*
 
 The enum **Format** contains all possible options like bold or underlining.
 
+### Possible formats:
+
+![formats](./pictures/formats.png)
+
 ## Changing foreground Color or background via enum value
 
 The foreground color of text can be changed via method **WithFgColor(Colors newFgColor)**.
@@ -49,6 +53,15 @@ The background color of text can be changed via method **WithBgColor(Colors newB
 
 The enum **Colors** indicates with its constants values like Red or Blue in which color a text can
 be printed.
+
+### Possible foreground colors via enum values: 
+
+![foreground_colors](./pictures/foreground_colors.png)
+
+### Possible background colors via enum values:
+
+![background_colors](./pictures/background_colors.png)
+
 
 ## Changing foreground Color or background via unsigned numbers.
 
