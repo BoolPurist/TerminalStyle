@@ -1,11 +1,23 @@
 # How to use it
 
+## Table of content
+
+[Include it](#Include-it)
+[How to use it generally](#How-to-use-it-generally.)
+[Changing-Format](#Changing-Format)
+[Changing foreground Color or background via enum value](#Changing-foreground-Color-or-background-via-enum-value)
+[Changing foreground Color or background via unsigned numbers](#Changing-foreground-Color-or-background-via-unsigned-numbers.)
+
+## Include it
+
 This library provides its functionality in the namespace TStyle.
 To use it, include the following header.
 
 ```cpp
 #include <terminal_style/TerStyledText.hpp>
 ```
+
+## How to use it generally.
 
 The library provides a class called **TerStyledText**. This class works like builder object via 
 method chaining to configure color and formatting of text.
