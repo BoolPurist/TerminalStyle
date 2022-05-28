@@ -63,10 +63,11 @@ add_subdirectory({path to folder submodule})
 Now the library is included in your cmake build process. 
 This library exposes a target called **terminal_style_lib** .
 
-You can link against this target to use this library via.
+You can link against this target to use this library.
+Link against **terminal_style_lib** via:
 
 ```cmake
-target_include_directories({name of target to use this lib} PRIVATE terminal_style_lib)
+target_link_libraries(<name of target to use this library> terminal_style_lib <... ohter targets>)
 ```
 
 This target also adds an include-path to the folder terminal_style with all the files for this library.
